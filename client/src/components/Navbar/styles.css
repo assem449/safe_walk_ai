@@ -1,0 +1,25 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #6A66A3; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: white; 
+  border-radius: 20px; 
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-right: 10px;
+}
+
+.brand-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
