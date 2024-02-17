@@ -11,6 +11,7 @@ import getLocation from getCurLongLat.js;
 
 let timeoutID;
 
+
 //sendFutureText(inputName, inputFriendNumber, inputLocation, inputTime);
 //console.log("just sent the text.");
 
