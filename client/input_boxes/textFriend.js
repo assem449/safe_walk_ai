@@ -1,13 +1,19 @@
-inputName = "";
-inputFriendNumber = 1; //must be a valid phone string
-inputLocation = ""; //must be a valid address string
-inputTime = "18:30:00"; //must be a valid time string
-geoapify_api_key = "776be82a39dd4a4da7874886c9abd830";
+import getLocation from getCurLongLat.js;
 
-let curLongitude;
-let curLatitude;
+//inputName = "Yan Qing";
+//inputFriendNumber = "+16476756827"; //must be a valid phone string
+//inputLocation = "11 Wellesley St. West"; //must be a valid address string
+//inputTime = "15:40:00"; //must be a valid time string
+//geoapify_api_key = "776be82a39dd4a4da7874886c9abd830";
+
+//let curLongitude = -79.5017;
+//let curLatitude = 43.7739;
 
 let timeoutID;
+
+
+//sendFutureText(inputName, inputFriendNumber, inputLocation, inputTime);
+//console.log("just sent the text.");
 
 
 function getCurDateString (currentDate) {
@@ -32,7 +38,14 @@ function sendFutureText(inputName, inputFriendNumber, inputLocation, inputTime) 
     let futureDate = getNewDateObject(currentDate, inputTime);
     let millisecondTimer = futureDate.getTime() - currentDate.getTime();
 
+    //TODO: delete these console logs
+    //console.log("Millisecond Timer is: ", millisecondTimer);
+    //console.log("Seconds to wait: ", millisecondTimer * 1000);
+
     timeoutID = setTimeout(textFriendNow, millisecondTimer, inputName, inputLocation, inputFriendNumber);
+
+    console.log("Just setTimout.");
+
 }
 
 function cancelFutureText() {
@@ -56,6 +69,7 @@ function convertStringToURLString(inputLocation) {
     return URLString;
 }
 
+//TODO: remove console log for long and lat in that one place, and implement curLong and curLat
 function textFriendNow(inputName, inputLocation, inputFriendNumber) {
     let callAPIURL = "https://api.geoapify.com/v1/geocode/search?text=" + convertStringToURLString(inputLocation) + "&format=json&filter=place:512c13d96292d853c0596a04d149a5d34540f00101f90173f2040000000000c00208&apiKey=776be82a39dd4a4da7874886c9abd830"
 
@@ -72,26 +86,37 @@ function textFriendNow(inputName, inputLocation, inputFriendNumber) {
             const expLongitude = jsonObject.results[0].lon;
             const expLatitude = jsonObject.results[0].lat;
 
-            console.log("longitude is ", longitude);
-            console.log("latitude is ", latitude);
+            const curLoc = getLocation;
+            const curLatitude = curLoc[0];
+            const curLongitude = curLoc[1];
 
-            let curLongitude = getCurLongitude(); //TODO: use implemented getCurLongitude function
-            let curLatitude = getCurLatitude(); //TODO: use implemented getCurLatitude function
+            //TODO: delete these console logs
+            //console.log("Expected Longitude: ", expLongitude);
+            //console.log("Expected Latitude: ", expLatitude);
+
+            //console.log("Current Longitude: ", curLongitude);
+            //console.log("Current Latitude: ", curLatitude);
 
             if (onLocationSame(curLatitude, curLongitude, expLatitude, expLongitude)) {
                 let smsText = inputName + " has arrived at " + inputLocation + "!";
                 sendSMS(inputFriendNumber, smsText);
+
+                //TODO: delete these console logs
+                //console.log("Locations are the same. Just sent home-safe SMS text to: ", inputFriendNumber);
             }
             else{
                 let smsText = inputName + " has not arrived at " + inputLocation + " yet.\n" +
                     "Expected time of arrival: " + inputTime +
                     "\nCheck up on them to see if they're alright!"
                 sendSMS(inputFriendNumber, smsText);
+
+                //TODO: delete these console logs
+                //console.log("Locations are NOT the same. Just sent in-danger SMS text to: ", inputFriendNumber);
             }
 
         })
         .catch(error => {
-            console.log("address does not exist.");
+            console.log("Problem with API call: using inputLocation to get expLong and expLat.");
             console.log('error', error)
         });
 }
@@ -137,7 +162,7 @@ function sendSMS (friendNumber, sendText) {
 function onLocationSame(curLat, curLng, expLat, expLng) {
 
     // lat1 and lng1 are the values of a previously stored location
-    return distance(lat1, lng1, lat2, lng2) < 0.1;
+    return distance(curLat, curLng, expLat, expLng) < 0.1;
 }
 
 /** calculates the distance between two locations in MILES */
