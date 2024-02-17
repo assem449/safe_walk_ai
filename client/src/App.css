@@ -1,6 +1,13 @@
 .App {
   text-align: center;
+  opacity: 0; 
+  transition: opacity 2s ease-out; 
 }
+
+.App.show {
+  opacity: 1;
+}
+
 
 .App-logo {
   height: 40vmin;
@@ -36,3 +43,78 @@
     transform: rotate(360deg);
   }
 }
+
+.safety-button {
+  padding: 52px 40px;
+  font-size: 18px;
+  font-weight: bold; 
+  background-color: #6A66A3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: calc(50% + 10px);
+  border-radius: 20px;
+  margin-left:90px;
+}
+
+.text-button {
+  padding: 52px 45px; 
+  font-size: 18px; 
+  font-weight: bold; 
+  background-color: #6A66A3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  left: calc(50% - 100px); 
+}
+
+
+
+.description {
+  margin-top: 40px; 
+  text-align: center; 
+  font-size: 14px; 
+  color: #777; 
+  font-family: monospace;
+  position: relative;
+  top: 100px; 
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.welcome-text {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.additional-text {
+  font-size: 16px;
+  color: #777;
+  margin-left: 15px;
+  font-family: monospace;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+

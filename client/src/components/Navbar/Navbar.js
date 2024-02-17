@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from '../../assets/favicon.png';
-import './styles.css'; // Import your CSS file for styling
+import logo from '../../assets/ghost.jpeg';
+import './styles.css'; 
 
 const Navbar = () => {
     return (
