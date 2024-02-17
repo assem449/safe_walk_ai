@@ -9,6 +9,7 @@ body {
     color: #232c3d;
   }
   
+  .container {
     width: 400px;
     margin: 40px auto;
     padding: 10px;
