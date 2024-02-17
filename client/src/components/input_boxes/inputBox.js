@@ -1,6 +1,7 @@
 // input_box.js
 import React, { useState } from 'react';
 import sendFutureText from './textFriend';
+import "inputBox.css";
 
 const InputBox = () => {
   const [name, setName] = useState('');
