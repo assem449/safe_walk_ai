@@ -1,58 +1,60 @@
 import React, { useState, useEffect } from "react";
-import { useGeolocated } from "react-geolocated";
-import Navbar from "./components/Navbar/Navbar"
+import Navbar from "./components/Navbar/Navbar";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import SmsPage from "./components/SmsPage/SmsPage";
+import Safety from "./components/Safety/Safety";
+
+import "./App.css";
 
 const App = () => {
-    const [longitude, setLongitude] = useState(null);
-    const [latitude, setLatitude] = useState(null);
-    const [danger, setDanger] = useState(null);
+  
+  const [showApp, setShowApp] = useState(false);
+  
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowApp(true);
+    }, 3000);
 
-    // Hook to get geolocation data
-    const { coords } = useGeolocated();
+    return () => clearTimeout(timeout);
+  }, []);
 
-    // Update latitude and longitude when geolocation data changes
-    useEffect(() => {
-        if (coords) {
-            setLongitude(coords.longitude);
-            setLatitude(coords.latitude);
-        }
-    }, [coords]);
-
-    const handlePredict = async () => {
-        try {
-            const response = await fetch('http://localhost:5000/predict', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    longitude: longitude,
-                    latitude: latitude,
-                })
-            });
-            const data = await response.json();
-            setDanger(data.message);
-        } catch (error) {
-            console.error('Error predicting danger:', error);
-        }
-    };
-
-    return (
-        <div className="App">
-            <div>
-                <Navbar />
-                {longitude && latitude && (
-                    <div>
-                        Latitude: {latitude}, Longitude: {longitude}
-                    </div>
-                )}
-                <button onClick={handlePredict}>
-                    Predict Danger
-                </button>
-            </div>
-            {danger !== null && <div>{danger}</div>}
+  return (
+    <Router>
+      <Routes>
+            <Route path="/" element={<>
+                <div>
+        {!showApp && (
+          <div className="welcome-container">
+            <h1 className="welcome-text">Welcome!</h1>
+            <p className="additional-text">Stay safe on the go with Safe Walk AI!</p>
+          </div>
+        )}
+        <div className={`App ${showApp ? "show" : ""}`}>
+          {showApp && (
+            <>
+              <Navbar />
+              <div className="description">
+                <p>
+                  Safe Walk AI! Predict potential dangers or text for personalized safety tips with just a tap.
+                </p>
+              </div>
+              <Link to="/sms" className="text-button">
+                SMS
+              </Link>
+              <Link to="/safety"className="safety-button">
+                Safety
+              </Link>
+            
+            </>
+          )}
         </div>
-    );
+        </div>
+            </>} />
+            <Route path="/sms" element={<SmsPage />} />
+            <Route path="/safety" element={<Safety />} />
+        </Routes>
+    </Router>
+  );
 };
 
 export default App;
