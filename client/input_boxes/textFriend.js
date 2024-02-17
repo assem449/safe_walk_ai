@@ -9,8 +9,6 @@ let curLatitude;
 
 let timeoutID;
 
-sendFutureText()
-
 
 function getCurDateString (currentDate) {
 
