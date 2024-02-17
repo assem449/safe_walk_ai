@@ -1,3 +1,4 @@
+import React from 'react';
 import sendFutureText from textFriendNow.js;
 
 document.addEventListener('DOMContentLoaded', function () {

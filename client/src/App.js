@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useGeolocated } from "react-geolocated";
 import Navbar from "./components/Navbar/Navbar"
+import inputBox from "../input_boxes/inputBox.js"
 
 const App = () => {
     const [longitude, setLongitude] = useState(null);
@@ -51,6 +52,7 @@ const App = () => {
                 </button>
             </div>
             {danger !== null && <div>{danger}</div>}
+            <inputBox />
         </div>
     );
 };
