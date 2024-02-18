@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useGeolocated } from "react-geolocated";
+import Navbar from "../Navbar/Navbar";
 import "./styles.css";
 
 const Safety = () => {
@@ -36,10 +37,13 @@ const Safety = () => {
   };
 
   return (
-    <div className="container">
-      <h1>Safety</h1>
-      <button onClick={handlePredict}>Predict</button>
-      {danger !== null && <div>{danger}</div>}
+    <div>
+      <Navbar /> {/* Use Navbar component here */}
+      <div className="container">
+        <h1>Safety</h1>
+        <button onClick={handlePredict}>Predict</button>
+        {danger !== null && <div>{danger}</div>}
+      </div>
     </div>
   );
 };

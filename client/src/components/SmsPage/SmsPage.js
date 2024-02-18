@@ -1,9 +1,13 @@
 import React from 'react';
+import Navbar from "../Navbar/Navbar";
 
 const SmsPage = () => {
   return (
     <div>
-      <h1>SMS Page</h1>
+       <Navbar />
+      <div>
+        <h1>SMS Page</h1>
+      </div>
     </div>
   );
 };
