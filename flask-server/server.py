@@ -32,9 +32,9 @@ def predict_danger(longitude, latitude):
     X_pred = scaler.transform([[longitude, latitude]])
     result = model.predict(X_pred)
     if result[0] == 1:
-        message = "This area is not safe. Consider taking a different route."
+        message = "This area is deemed unsafe by our AI Algorithm. Consider taking a different route."
     else:
-        message = "This area is safe! Enjoy your walk."
+        message = "This area is deemed safe by our AI Algorithm! Enjoy your walk."
     
     return {'message' : message}
 
