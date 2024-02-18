@@ -64,7 +64,7 @@
 .safety_description {
   z-index: -1;
   margin-top: 190px;
-  margin-left: 120px;
+  margin-left: 130px;
   width: 300px;
   position: relative;
   font-size: 14px;
@@ -89,7 +89,7 @@
 
 .button_description {
   z-index: -1;
-  margin-left: 120px;
+  margin-left: 140px;
   margin-top: 320px;
   width: 300px;
   position: relative;

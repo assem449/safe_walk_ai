@@ -9,13 +9,3 @@
     font-size: 24px;
     color: #333;
 }
-
-.description {
-    text-align: center; 
-    display: block;
-    margin: 60px;
-    margin-bottom: 100px;
-    font-size: 14px; 
-    color: #777; 
-    font-family: monospace;
-}

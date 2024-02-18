@@ -8,13 +8,13 @@
   color: white; 
 }
 
-.logo-container {
+.brand-logo-container {
   display: flex;
   align-items: center;
 }
 
 .logo {
-  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .brand-name {
@@ -22,3 +22,7 @@
   font-weight: bold;
 }
 
+.go-back {
+  margin-right: auto; 
+  cursor: pointer;
+}
