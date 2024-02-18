@@ -46,7 +46,9 @@
 
 .safety-button {
   padding: 52px 40px;
+  width: 193px;
   font-size: 18px;
+  margin-top: 100px;
   font-weight: bold; 
   background-color: #6A66A3;
   color: white;
@@ -55,9 +57,19 @@
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  left: calc(50% + 10px);
+  top: calc(50% + 50px);
   border-radius: 20px;
-  margin-left:90px;
+}
+
+.safety_description {
+  z-index: -1;
+  margin-top: 190px;
+  margin-left: 120px;
+  width: 300px;
+  position: relative;
+  font-size: 14px;
+  color: #777;
+  font-family: monospace;
 }
 
 .text-button {
@@ -72,7 +84,18 @@
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 20px;
-  left: calc(50% - 100px); 
+  top: calc(50% - 100px); 
+}
+
+.button_description {
+  z-index: -1;
+  margin-left: 120px;
+  margin-top: 320px;
+  width: 300px;
+  position: relative;
+  font-size: 13px;
+  color: #777;
+  font-family: monospace;
 }
 
 
