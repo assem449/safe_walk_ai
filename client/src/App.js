@@ -38,12 +38,22 @@ const App = () => {
                   Safe Walk AI! Predict potential dangers or text for personalized safety tips with just a tap.
                 </p>
               </div>
-              <Link to="/sms" className="text-button">
-                SMS
-              </Link>
-              <Link to="/safety"className="safety-button">
-                Safety
-              </Link>
+              <span class="button">
+                <Link to="/sms" className="text-button">
+                    Text Me When You're Home!
+                </Link>
+                <p className="button_description">
+                    Send an automated to your friend to alert them if you have not reached your intended location by the expected time.
+                </p>
+              </span>
+              <span class="button">
+                <Link to="/safety"className="safety-button">
+                    Is it Safe Here?
+                </Link>
+                <p className="safety_description">
+                    Get real time information about the safety of the area you are currently in.
+                </p>
+              </span>
             
             </>
           )}
