@@ -48,7 +48,7 @@ const App = () => {
             </>
           )}
         </div>
-            <InputBox />
+            
         </div>
             </>} />
             <Route path="/sms" element={<SmsPage />} />
