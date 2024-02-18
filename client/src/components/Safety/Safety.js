@@ -45,7 +45,7 @@ const Safety = () => {
       <img src={dog} alt="doggif" height="100vh" className="dog" /> 
       <div className="description">Our safety prediction tool is built off of an AI model 
       trained using thousands of data points on violent crime in the Toronto area. We're currently tracking your location at longitude: {longitude} and latitude: {latitude}.
-      To track your safety at your current location, press the buton below.</div>
+      To view your predicted safety at your current location, press the buton below. Please note that our tool is not yet perfectly accurate, and we're currently working on gathering data on time and season of the year as risk variables for crime.</div>
         <button onClick={handlePredict}>Check now</button>
         {danger !== null && <div className="danger-message">{danger}</div>}
         </div>
