@@ -1,13 +1,47 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 80vh; 
-    margin-top: 10vh; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 80vh; 
+  margin-top: 10vh; 
+  margin-left: 5vw;  /* Adjusted for smaller screens */
+  margin-right: 5vw; /* Adjusted for smaller screens */
+  margin-bottom: 10vh;
+}
+
+.heading {
+  font-size: 5vh;
+  font-weight: 700;
+}
+
+button {
+  font-size: 20px;
+  background-color: #6A66A3;
+  color: white;
+  border: none;
+  padding: 20px;
+  border-radius: 6%;
+  cursor: pointer;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+.danger-message {
+  font-size: 22px; 
+  color: #777; 
+  font-family: monospace;
+  text-align: center;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    margin-left: 10px; /* Adjusted for smaller screens */
+    margin-right: 10px; /* Adjusted for smaller screens */
   }
-  
-  .button-container {
-    margin-top: 20px;
+
+  .description {
+    margin-bottom: 10vh;
   }
-  
+}

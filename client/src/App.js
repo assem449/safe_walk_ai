@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import SmsPage from "./components/SmsPage/SmsPage";
 import Safety from "./components/Safety/Safety";
-import logo from "./assets/photo.JPG";
 
 import "./App.css";
 
@@ -26,7 +25,6 @@ const App = () => {
                 <div>
         {!showApp && (
           <div className="welcome-container">
-             <img src={logo} alt="Logo" className="logo1"/>
             <h1 className="welcome-text">Welcome!</h1>
             <p className="additional-text">Stay safe on the go with Safe Walk AI!</p>
           </div>
@@ -50,7 +48,6 @@ const App = () => {
             </>
           )}
         </div>
-            
         </div>
             </>} />
             <Route path="/sms" element={<SmsPage />} />
