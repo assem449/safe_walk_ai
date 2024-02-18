@@ -8,12 +8,6 @@
   opacity: 1;
 }
 
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -106,6 +100,11 @@
   color: #777;
   margin-left: 15px;
   font-family: monospace;
+}
+
+.logo1 {
+  width: 150px;
+  height: 100px;
 }
 
 
