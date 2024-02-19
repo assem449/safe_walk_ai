@@ -33,3 +33,6 @@ npm start
 yarn start
 ```
 
+### Links:
+Devpost: https://devpost.com/software/safewalk-2kef98?ref_content=my-projects-tab&ref_feature=my_projects
+Canva: https://www.canva.com/design/DAF9G4oSgnY/H29xWIX2OLGRVcFYyA7lQQ/edit
