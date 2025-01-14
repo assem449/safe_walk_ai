@@ -36,3 +36,4 @@ yarn start
 ### Links:
 #### Devpost: https://devpost.com/software/safewalk-2kef98?ref_content=my-projects-tab&ref_feature=my_projects
 #### Canva: https://www.canva.com/design/DAF9G4oSgnY/H29xWIX2OLGRVcFYyA7lQQ/edit
+#### Demo video: https://drive.google.com/file/d/1lG3tqg8b4FRJmBobUgl4BGma0WL7LGpD/view?usp=sharing
